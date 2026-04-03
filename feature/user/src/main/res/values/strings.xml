@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My App</string>
+
+    <!-- User List -->
+    <string name="user_list_title">Users</string>
+    <string name="search_users">Search users…</string>
+    <string name="search">Search</string>
+    <string name="clear_search">Clear search</string>
+    <string name="search_results_count">%d results found</string>
+    <string name="user_avatar">User avatar</string>
+    <string name="delete_user">Delete user</string>
+
+    <!-- User Detail -->
+    <string name="user_detail_title">User Details</string>
+
+    <!-- Actions -->
+    <string name="retry">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="close">Close</string>
+
+    <!-- Delete Confirmation -->
+    <string name="delete_user_title">Delete User</string>
+    <string name="delete_user_message">Are you sure you want to delete %s?</string>
+
+    <!-- Empty States -->
+    <string name="empty_state">Empty state</string>
+    <string name="empty_user_list_title">No Users Found</string>
+    <string name="empty_user_list_message">There are no users to display at the moment</string>
+    <string name="empty_search_title">No Results</string>
+    <string name="empty_search_message">No users found matching your search</string>
+
+    <!-- Error States -->
+    <string name="error_state">Error state</string>
+    <string name="error_generic_title">Something Went Wrong</string>
+    <string name="error_generic_message">An unexpected error occurred</string>
+    <string name="error_network_title">No Connection</string>
+    <string name="error_network_message">Please check your internet connection and try again</string>
+    <string name="error_unauthorized_title">Unauthorized</string>
+    <string name="error_unauthorized_message">You don\'t have permission to access this resource</string>
+    <string name="error_not_found_title">Not Found</string>
+    <string name="error_not_found_message">The requested resource was not found</string>
+
+    <!-- Network Status -->
+    <string name="network_offline">No internet connection</string>
+    <string name="network_unstable">Connection unstable</string>
+    <string name="network_restored">Connection restored</string>
+
+    <!-- Loading -->
+    <string name="loading">Loading…</string>
+    <string name="refreshing">Refreshing…</string>
+    <string name="searching">Searching…</string>
+
+    <!-- Success Messages -->
+    <string name="user_deleted_success">User deleted successfully</string>
+    <string name="user_updated_success">User updated successfully</string>
+
+    <!-- Error Messages -->
+    <string name="user_delete_failed">Failed to delete user: %s</string>
+    <string name="user_update_failed">Failed to update user: %s</string>
+    <string name="search_failed">Search failed: %s</string>
+</resources>
