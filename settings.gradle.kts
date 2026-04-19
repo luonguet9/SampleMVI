@@ -24,3 +24,5 @@ include(":app")
 include(":core")
 
 include(":feature:user")
+include(":feature:auth")
+include(":feature:chat")

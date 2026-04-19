@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "238423295301",
+    "project_id": "aichatapp-7b051",
+    "storage_bucket": "aichatapp-7b051.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238423295301:android:4aadf473545d35cdca2a2c",
+        "android_client_info": {
+          "package_name": "com.example.samplemvi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238423295301-f4gh3r41rr59mr9lruherltf6hidnt9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.samplemvi",
+            "certificate_hash": "342ca77ef863f9eb92a559c789a831ec9ce45145"
+          }
+        },
+        {
+          "client_id": "238423295301-g4pt41ilu8qrmrkoum9cmhcn2ro0pgnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8M0G8jNLIgAXci46dZHOaKuXZLP80vsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238423295301-g4pt41ilu8qrmrkoum9cmhcn2ro0pgnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

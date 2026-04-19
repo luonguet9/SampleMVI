@@ -3,6 +3,7 @@ plugins {
 	alias(libs.plugins.kotlin.android)
 	alias(libs.plugins.ksp)
 	alias(libs.plugins.hilt.android)
+	alias(libs.plugins.google.services)
 }
 
 android {
@@ -51,6 +52,8 @@ android {
 dependencies {
 	implementation(project(":core"))
 	implementation(project(":feature:user"))
+	implementation(project(":feature:auth"))
+	implementation(project(":feature:chat"))
 
 	// Core Android
 	implementation(libs.androidx.core.ktx)
