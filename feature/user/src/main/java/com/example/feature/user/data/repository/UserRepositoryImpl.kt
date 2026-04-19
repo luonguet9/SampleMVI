@@ -102,15 +102,18 @@ class UserRepositoryImpl @Inject constructor(
 				val users = response.users.map { entity -> userDtoMapper.map(entity) }
 				DomainResult.Success(users)
 			} catch (e: Exception) {
-				if (e is IOException) {
-					// Case offline
-					AppLogger.logCache("Offline mode: searching local DB for query: $query")
+				val shouldFallbackToLocal = e is IOException ||
+					(e is HttpException && e.code() == 404)
+
+				if (shouldFallbackToLocal) {
+					// Fallback to Room: offline mode OR API endpoint not found
+					AppLogger.logCache("Search API unavailable, falling back to local DB for query: $query")
 					try {
 						val localResults = userDao.searchUser(query)
-						AppLogger.logCache("Found ${localResults.size} users for query: $query in local DB")
+						AppLogger.logCache("Found ${localResults.size} users for '$query' in local DB")
 						DomainResult.Success(localResults.map { userEntityMapper.map(it) })
 					} catch (localDbException: Exception) {
-						AppLogger.logError("Failed local fallback search", localDbException)
+						AppLogger.logError("Local DB search also failed", localDbException)
 						DomainResult.Error(mapException(localDbException))
 					}
 				} else {

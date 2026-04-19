@@ -35,7 +35,11 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
 }
 
@@ -46,10 +50,6 @@ dependencies {
     // Lifecycle / ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-
-    // Fragment (needed for BaseFragment)
-    implementation(libs.androidx.fragment.ktx)
-
 
     // Coroutines
     implementation(libs.coroutines.android)
@@ -65,4 +65,13 @@ dependencies {
 
     // Timber
     implementation(libs.timber)
+    
+    // Compose
+    implementation(platform(libs.compose.bom))
+    implementation(libs.compose.ui)
+    implementation(libs.compose.ui.graphics)
+    implementation(libs.compose.ui.tooling.preview)
+    implementation(libs.compose.material3)
+    implementation(libs.activity.compose)
+    debugImplementation(libs.compose.ui.tooling)
 }

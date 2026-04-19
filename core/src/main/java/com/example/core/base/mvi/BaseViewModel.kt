@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -104,16 +105,17 @@ abstract class BaseViewModel<I : MviIntent, S : MviState, E : MviEffect>(
      * Convenience extension: launches a Flow collection tied to viewModelScope.
      * Used to kick off FlowUseCase results inside [handleIntent].
      *
+     * The flow is typically transformed with [kotlinx.coroutines.flow.onEach]
+     * before calling launchIn(), so all side effects run there.
+     *
      * Usage:
      * ```kotlin
-     * getUsersUseCase(params).onEach { result -> ... }.launchIn()
+     * getUsersUseCase(params)
+     *     .onEach { result -> handleResult(result) }
+     *     .launchIn()
      * ```
      */
-    protected fun <T> Flow<T>.launchIn() {
-        viewModelScope.launch {
-            collect {}
-        }
-    }
+    protected fun <T> Flow<T>.launchIn() = launchIn(viewModelScope)
 
     override fun onCleared() {
         super.onCleared()

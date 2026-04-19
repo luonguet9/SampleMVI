@@ -21,6 +21,7 @@ android {
 	
 	buildFeatures {
 		buildConfig = true
+		compose = true
 	}
 	
 	buildTypes {
@@ -41,9 +42,14 @@ android {
 	kotlinOptions {
 		jvmTarget = "17"
 	}
+	
+	composeOptions {
+		kotlinCompilerExtensionVersion = "1.5.10"
+	}
 }
 
 dependencies {
+	implementation(project(":core"))
 	implementation(project(":feature:user"))
 
 	// Core Android
@@ -58,4 +64,15 @@ dependencies {
 
 	// Timber
 	implementation(libs.timber)
+
+	// Compose
+	implementation(platform(libs.compose.bom))
+	implementation(libs.compose.ui)
+	implementation(libs.compose.ui.graphics)
+	implementation(libs.compose.ui.tooling.preview)
+	implementation(libs.compose.material3)
+	implementation(libs.activity.compose)
+	implementation(libs.androidx.navigation.compose)
+	implementation(libs.androidx.hilt.navigation.compose)
+	debugImplementation(libs.compose.ui.tooling)
 }
